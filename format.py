@@ -18,7 +18,7 @@ class FormatterMiddleware(BlockMiddleware):
         super().__init__()
 
     def transform_entry(self, entry, *args, **kwargs):
-        if entry.entry_type == "inproceedings":
+        if entry.entry_type in ["inproceedings", "article"]:
             if "booktitle" in entry:
                 entry["booktitle"] = self.transform_booktitle(entry["booktitle"])
             elif "journal" in entry:
@@ -42,18 +42,29 @@ class FormatterMiddleware(BlockMiddleware):
         title_part = title[0].lower().strip(punctuation)
 
         # booktitle
-        if "booktitle" in entry:
-            booktitle_part = entry["booktitle"].split(" ")[-1].capitalize()
-        elif "journal" in entry:
-            booktitle_part = entry["journal"].split(" ")[-1].capitalize()
+        if self.is_arxiv(entry):
+            booktitle_part = "Arxiv"
         else:
-            raise NotImplementedError()
+            # Assumes last word is the conference acronym
+            if "booktitle" in entry:
+                booktitle_part = entry["booktitle"].split(" ")[-1].capitalize()
+            elif "journal" in entry:
+                booktitle_part = entry["journal"].split(" ")[-1].capitalize()
+            else:
+                raise NotImplementedError()
 
         # year
         year_part = entry["year"] if "year" in entry else ""
 
         key = f"{title_part}{booktitle_part}{year_part}"
         return key
+
+    def is_arxiv(self, entry):
+        fields_to_search = ["booktitle", "journal"]
+        for f in fields_to_search:
+            if f in entry and "arxiv" in entry[f].lower():
+                return True
+        return False
 
 
 def format(input_file, output_file):

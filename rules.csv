@@ -20,3 +20,5 @@ booktitle_regex,booktitle_formatted
 "Symposium on Principles and Practice of Parallel Programming","ACM PPoPP"
 "special interest group on data communication","ACM SIGCOMM"
 "International Symposium on Computer Architecture","ACM/IEEE ISCA"
+"ECCV","ECCV"
+"International Conference on Mobile Computing and Networking","ACM MobiCom"

@@ -20,7 +20,7 @@ class FormatterBlockMiddleware(BlockMiddleware):
         super().__init__()
 
     def transform_entry(self, entry, *args, **kwargs):
-        if entry.entry_type in ["inproceedings", "article"]:
+        if entry.entry_type in ["inproceedings", "article", "conference"]:
             if "booktitle" in entry:
                 entry["booktitle"] = self.transform_booktitle(entry["booktitle"])
             elif "journal" in entry:

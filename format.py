@@ -1,31 +1,54 @@
 import bibtexparser
+from string import punctuation
 import re
 import sys
+import pandas as pd
 
 from bibtexparser.middlewares import BlockMiddleware
 
 
 class FormatterMiddleware(BlockMiddleware):
-    booktitle_regex_to_formatted_name = [
-        [r"symposium on cloud computing", "Proc. of ACM SoCC"],
-        [r"annual technical conference", "Proc. of USENIX ATC"],
-    ]
+    def __init__(self, rules_file):
+        self.rules = pd.read_csv(rules_file).values.tolist()
+        super().__init__()
 
     def transform_entry(self, entry, *args, **kwargs):
-        if "booktitle" in entry:
-            entry["booktitle"] = self.transform_booktitle(entry["booktitle"])
+        if entry.entry_type == "inproceedings":
+            if "booktitle" in entry:
+                entry["booktitle"] = self.transform_booktitle(entry["booktitle"])
+            elif "journal" in entry:
+                entry["journal"] = self.transform_booktitle(entry["journal"])
+            else:
+                raise NotImplementedError()
+            entry.key = self.synthesize_key(entry)
+
         return entry
 
     def transform_booktitle(self, n):
-        for regex, formatted_name in self.booktitle_regex_to_formatted_name:
+        for regex, formatted_name in self.rules:
             if re.search(regex, n, flags=re.IGNORECASE):
-                return formatted_name
+                return f"Proc. of {formatted_name}"
         return n
+
+    def synthesize_key(self, entry):
+        title_part = entry["title"].split(" ")[0].lower().strip(punctuation)
+
+        if "booktitle" in entry:
+            booktitle_part = entry["booktitle"].split(" ")[-1].capitalize()
+        elif "journal" in entry:
+            booktitle_part = entry["journal"].split(" ")[-1].capitalize()
+        else:
+            raise NotImplementedError()
+
+        year_part = entry["year"] if "year" in entry else ""
+
+        key = f"{title_part}{booktitle_part}{year_part}"
+        return key
 
 
 def format(input_file, output_file):
     layers = [
-        FormatterMiddleware(),
+        FormatterMiddleware("rules.csv"),
     ]
 
     library = bibtexparser.parse_file(input_file, append_middleware=layers)

@@ -4,13 +4,13 @@ Formats the given bib file by:
 
 * Rename the citation key to the following grammar:
 
-    ```
-    CITATION_KEY :== PAPER_NAME CONFERENCE_NAME [YEAR]
+    ```ebnf
+    CITATION_KEY ::= PAPER_NAME CONFERENCE_NAME [YEAR]
 
-    PAPER_NAME :== SYSTEM_NAME_IF_SYSTEMS_PAPER
+    PAPER_NAME ::= SYSTEM_NAME_IF_SYSTEMS_PAPER
                 | FIRST_WORD_OF_TITLE
 
-    CONFERENCE_NAME :== 'ACM SIGCOMM'
+    CONFERENCE_NAME ::= 'ACM SIGCOMM'
                     | 'ACM MobiCom' 
                     | 'USENIX OSDI' 
                     ...

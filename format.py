@@ -7,11 +7,13 @@ import nltk
 import pandas as pd
 
 nltk.download("stopwords")
-from bibtexparser.middlewares import BlockMiddleware
+from bibtexparser.library import Library
+from bibtexparser.middlewares import BlockMiddleware, LibraryMiddleware
+from bibtexparser.model import ParsingFailedBlock
 from nltk.corpus import stopwords
 
 
-class FormatterMiddleware(BlockMiddleware):
+class FormatterBlockMiddleware(BlockMiddleware):
     def __init__(self, rules_file):
         self.rules = pd.read_csv(rules_file).values.tolist()
         self.stopwords = set(stopwords.words("english"))
@@ -35,12 +37,10 @@ class FormatterMiddleware(BlockMiddleware):
 
     def synthesize_key(self, entry):
         # title
-        if 'title' not in entry:
-            breakpoint()
-        title = [w.lower().strip('{}') for w in entry["title"].split(" ")]
+        title = [w.lower().strip("{}") for w in entry["title"].split(" ")]
         title = [w for w in title if w not in self.stopwords]
         title_part = title[0].lower().strip(punctuation)
-        title_part = re.sub(r'[^\w\s]', '', title_part)
+        title_part = re.sub(r"[^\w\s]", "", title_part)
 
         # booktitle
         if self.is_arxiv(entry):
@@ -68,13 +68,24 @@ class FormatterMiddleware(BlockMiddleware):
         return False
 
 
-def format(input_file, output_file):
-    layers = [
-        FormatterMiddleware("rules.csv"),
-    ]
+class RemoveFailedBlocksLibraryMiddleware(LibraryMiddleware):
+    def transform(self, library):
+        library = Library(
+            blocks=[b for b in library._blocks if not isinstance(b, ParsingFailedBlock)]
+        )
+        return library
 
-    library = bibtexparser.parse_file(input_file, append_middleware=layers)
-    bibtexparser.write_file(output_file, library)
+
+def format(input_file, output_file):
+    library = bibtexparser.parse_file(
+        input_file,
+        append_middleware=[FormatterBlockMiddleware("rules.csv")],
+    )
+    bibtexparser.write_file(
+        output_file,
+        library,
+        append_middleware=[RemoveFailedBlocksLibraryMiddleware()],
+    )
 
 
 if __name__ == "__main__":

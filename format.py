@@ -23,8 +23,6 @@ class FormatterMiddleware(BlockMiddleware):
                 entry["booktitle"] = self.transform_booktitle(entry["booktitle"])
             elif "journal" in entry:
                 entry["journal"] = self.transform_booktitle(entry["journal"])
-            else:
-                raise NotImplementedError()
             entry.key = self.synthesize_key(entry)
 
         return entry
@@ -37,9 +35,12 @@ class FormatterMiddleware(BlockMiddleware):
 
     def synthesize_key(self, entry):
         # title
-        title = [w.lower() for w in entry["title"].split(" ")]
+        if 'title' not in entry:
+            breakpoint()
+        title = [w.lower().strip('{}') for w in entry["title"].split(" ")]
         title = [w for w in title if w not in self.stopwords]
         title_part = title[0].lower().strip(punctuation)
+        title_part = re.sub(r'[^\w\s]', '', title_part)
 
         # booktitle
         if self.is_arxiv(entry):
@@ -51,7 +52,7 @@ class FormatterMiddleware(BlockMiddleware):
             elif "journal" in entry:
                 booktitle_part = entry["journal"].split(" ")[-1].capitalize()
             else:
-                raise NotImplementedError()
+                booktitle_part = ""
 
         # year
         year_part = entry["year"] if "year" in entry else ""
@@ -60,7 +61,7 @@ class FormatterMiddleware(BlockMiddleware):
         return key
 
     def is_arxiv(self, entry):
-        fields_to_search = ["booktitle", "journal"]
+        fields_to_search = ["booktitle", "journal", "publisher"]
         for f in fields_to_search:
             if f in entry and "arxiv" in entry[f].lower():
                 return True

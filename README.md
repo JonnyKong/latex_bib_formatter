@@ -3,12 +3,13 @@
 Formats the given bib file by:
 
 * Rename the citation key to the following grammar:
-```
-CITATION_KEY :== PAPER_NAME CONFERENCE_NAME [YEAR]
 
-PAPER_NAME := SYSTEM_NAME_FOR_SYSTEM_CONFS
-            | FIRST_WORD_TITLE
-```
+    ```
+    CITATION_KEY :== PAPER_NAME CONFERENCE_NAME [YEAR]
+
+    PAPER_NAME := SYSTEM_NAME_IF_SYSTEMS_PAPER
+                | FIRST_WORD_TITLE
+    ```
 
 * Replace conference names with acronyms (see `rules.csv`)
 

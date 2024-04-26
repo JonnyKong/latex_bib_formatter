@@ -16,7 +16,8 @@ Formats the given bib file by:
                     ...
     ```
 
-* Replace conference names with acronyms (see `rules.csv`, append rows if needed)
+* Replace conference names with acronyms (see [`rules.csv`](rules.csv), append
+  rows if needed)
 
 ### Getting Started
 

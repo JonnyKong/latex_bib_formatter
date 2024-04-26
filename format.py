@@ -1,15 +1,20 @@
-import bibtexparser
-from string import punctuation
 import re
 import sys
+from string import punctuation
+
+import bibtexparser
+import nltk
 import pandas as pd
 
+nltk.download("stopwords")
 from bibtexparser.middlewares import BlockMiddleware
+from nltk.corpus import stopwords
 
 
 class FormatterMiddleware(BlockMiddleware):
     def __init__(self, rules_file):
         self.rules = pd.read_csv(rules_file).values.tolist()
+        self.stopwords = set(stopwords.words("english"))
         super().__init__()
 
     def transform_entry(self, entry, *args, **kwargs):
@@ -31,8 +36,12 @@ class FormatterMiddleware(BlockMiddleware):
         return n
 
     def synthesize_key(self, entry):
-        title_part = entry["title"].split(" ")[0].lower().strip(punctuation)
+        # title
+        title = [w.lower() for w in entry["title"].split(" ")]
+        title = [w for w in title if w not in self.stopwords]
+        title_part = title[0].lower().strip(punctuation)
 
+        # booktitle
         if "booktitle" in entry:
             booktitle_part = entry["booktitle"].split(" ")[-1].capitalize()
         elif "journal" in entry:
@@ -40,6 +49,7 @@ class FormatterMiddleware(BlockMiddleware):
         else:
             raise NotImplementedError()
 
+        # year
         year_part = entry["year"] if "year" in entry else ""
 
         key = f"{title_part}{booktitle_part}{year_part}"

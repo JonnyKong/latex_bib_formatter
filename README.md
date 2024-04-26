@@ -8,7 +8,7 @@ Formats the given bib file by:
     CITATION_KEY :== PAPER_NAME CONFERENCE_NAME [YEAR]
 
     PAPER_NAME :== SYSTEM_NAME_IF_SYSTEMS_PAPER
-                | FIRST_WORD_TITLE
+                | FIRST_WORD_OF_TITLE
 
     CONFERENCE_NAME :== 'ACM SIGCOMM'
                     | 'ACM MobiCom' 

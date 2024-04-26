@@ -11,21 +11,21 @@ Formats the given bib file by:
                 | FIRST_WORD_TITLE
     ```
 
-* Replace conference names with acronyms (see `rules.csv`)
+* Replace conference names with acronyms (see `rules.csv`, append rows if needed)
 
 ### Getting Started
 
 1. Import multiple `.bib` files into [JebRef](https://www.jabref.org) to remove
    duplicate entries
 
-1. Install deps
+2. Install deps
 
 ```bash
 pip install --pre bibtexparser
 pip install nltk
 ```
 
-1. Format the bib file:
+3. Format the bib file:
 
 ```bash
 python format.py <input_bib_file> <output_bib_file>

@@ -5,7 +5,7 @@ Formats the given bib file by:
 * Rename the citation key to the following grammar:
 
     ```ebnf
-    CITATION_KEY ::= PAPER_NAME CONFERENCE_NAME [YEAR]
+    CITATION_KEY ::= PAPER_NAME ':' CONFERENCE_NAME [YEAR]
 
     PAPER_NAME ::= SYSTEM_NAME_IF_SYSTEMS_PAPER
                 | FIRST_WORD_OF_TITLE

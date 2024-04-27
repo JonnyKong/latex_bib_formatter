@@ -53,12 +53,12 @@ class FormatterBlockMiddleware(BlockMiddleware):
                 booktitle_part = entry["journal"].split(" ")[-1]
             else:
                 booktitle_part = ""
-        booktitle_part = booktitle_part.strip(punctuation).capitalize()
+        booktitle_part = booktitle_part.strip(punctuation).lower()
 
         # year
         year_part = entry["year"] if "year" in entry else ""
 
-        key = f"{title_part}{booktitle_part}{year_part}"
+        key = f"{title_part}:{booktitle_part}{year_part}"
         return key
 
     def is_arxiv(self, entry):

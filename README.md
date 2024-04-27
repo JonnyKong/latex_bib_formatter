@@ -1,6 +1,6 @@
 # bib_formatter
 
-Formats the given bib file by:
+Formats the given latex bib file by:
 
 * Rename the citation key to the following grammar:
 
@@ -22,7 +22,7 @@ Formats the given bib file by:
 ### Getting Started
 
 1. Import multiple `.bib` files into [JebRef](https://www.jabref.org) to remove
-   duplicate entries
+   duplicate entries, and export the de-duplicated `.bib` file
 
 2. Install deps
 

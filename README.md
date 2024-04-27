@@ -21,8 +21,8 @@ Formats the given latex bib file by:
 
 ### Getting Started
 
-1. Import multiple `.bib` files into [JebRef](https://www.jabref.org) to remove
-   duplicate entries, and export the de-duplicated `.bib` file
+1. Import one or more`.bib` files into [JebRef](https://www.jabref.org) to
+   remove duplicate entries, and export a single de-duplicated `.bib` file
 
 2. Install deps
 

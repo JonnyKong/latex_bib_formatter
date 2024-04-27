@@ -48,11 +48,12 @@ class FormatterBlockMiddleware(BlockMiddleware):
         else:
             # Assumes last word is the conference acronym
             if "booktitle" in entry:
-                booktitle_part = entry["booktitle"].split(" ")[-1].capitalize()
+                booktitle_part = entry["booktitle"].split(" ")[-1]
             elif "journal" in entry:
-                booktitle_part = entry["journal"].split(" ")[-1].capitalize()
+                booktitle_part = entry["journal"].split(" ")[-1]
             else:
                 booktitle_part = ""
+        booktitle_part = booktitle_part.strip(punctuation).capitalize()
 
         # year
         year_part = entry["year"] if "year" in entry else ""

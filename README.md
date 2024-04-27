@@ -26,13 +26,13 @@ Formats the given latex bib file by:
 
 2. Install deps
 
-```bash
-pip install --pre bibtexparser
-pip install nltk
-```
+    ```bash
+    pip install --pre bibtexparser
+    pip install nltk
+    ```
 
 3. Format the bib file:
 
-```bash
-python format.py <input_bib_file> <output_bib_file>
-```
+    ```bash
+    python format.py <input_bib_file> <output_bib_file>
+    ```

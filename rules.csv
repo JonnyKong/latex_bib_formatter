@@ -56,3 +56,4 @@ booktitle_regex,booktitle_formatted
 "Emerging Networking EXperiments and Technologies","ACM CoNEXT"
 "Global Communications Conference","IEEE GLOBECOM"
 "International Conference on Robotics and Automation","IEEE ICRA"
+"international conference on distributed computing systems","IEEE ICDCS"

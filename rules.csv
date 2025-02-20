@@ -1,5 +1,6 @@
 booktitle_regex,booktitle_formatted
 "SIGCOMM NAI","ACM SIGCOMM NAI"
+"SIGCOMM CCR","ACM SIGCOMM CCR"
 "SIGCOMM Computer Communication Review","ACM SIGCOMM CCR"
 "SIGCOMM","ACM SIGCOMM"
 "special interest group on data communication","ACM SIGCOMM"

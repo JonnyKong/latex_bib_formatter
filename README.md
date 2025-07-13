@@ -22,7 +22,8 @@ Formats the given latex bib file by:
 ### Getting Started
 
 1. Import one or more`.bib` files into [JebRef](https://www.jabref.org) to
-   remove duplicate entries, and export a single de-duplicated `.bib` file
+   remove duplicate entries, and export a single de-duplicated `.bib` file. An
+   example is `dsnl.bib`
 
 2. Install deps
 
@@ -35,4 +36,10 @@ Formats the given latex bib file by:
 
     ```bash
     python format.py <input_bib_file> <output_bib_file>
+    ```
+
+    For example:
+
+    ```bash
+    python format.py dsnl.bib dsnl_processed.bib
     ```

@@ -58,3 +58,4 @@ booktitle_regex,booktitle_formatted
 "Global Communications Conference","IEEE GLOBECOM"
 "International Conference on Robotics and Automation","IEEE ICRA"
 "international conference on distributed computing systems","IEEE ICDCS"
+"Hot Topics in Operating Systems","ACM HotOS"

@@ -5,12 +5,13 @@ from string import punctuation
 import bibtexparser
 import nltk
 import pandas as pd
-
-nltk.download("stopwords")
 from bibtexparser.library import Library
-from bibtexparser.middlewares import BlockMiddleware, LibraryMiddleware
+from bibtexparser.middlewares import BlockMiddleware
+from bibtexparser.middlewares import LibraryMiddleware
 from bibtexparser.model import ParsingFailedBlock
 from nltk.corpus import stopwords
+
+nltk.download("stopwords")
 
 
 class FormatterBlockMiddleware(BlockMiddleware):

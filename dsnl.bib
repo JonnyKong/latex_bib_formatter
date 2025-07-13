@@ -46,11 +46,15 @@
 }
 
 
-@article{edgeslam:mobisys2020,
-	author = {Ben Ali, Ali J. and Hashemifar, Zakieh Sadat and Dantu, Karthik},
-	title = {Edge-SLAM: Edge-Assisted Visual Simultaneous Localization and Mapping},
-	year = {2020},
-	booktitle = {Proc. of ACM MobiSys}
+@article{ben2022edge,
+  title={Edge-SLAM: Edge-assisted visual simultaneous localization and mapping},
+  author={Ben Ali, Ali J and Kouroshli, Marziye and Semenova, Sofiya and Hashemifar, Zakieh Sadat and Ko, Steven Y and Dantu, Karthik},
+  journal={ACM Transactions on Embedded Computing Systems},
+  volume={22},
+  number={1},
+  pages={1--31},
+  year={2022},
+  publisher={ACM New York, NY}
 }
 
 
@@ -4544,7 +4548,7 @@ pages={279},
 @inproceedings{tvm:osdi2018,
 	author = {Chen, Tianqi and Moreau, Thierry and Jiang, Ziheng and Zheng, Lianmin and Yan, Eddie and Shen, Haichen and Cowan, Meghan and Wang, Leyuan and Hu, Yuwei and Ceze, Luis and others},
 	booktitle = {Proc. of USENIX OSDI},
-	title = {$\{$TVM$\}$: An automated $\{$End-to-End$\}$ optimizing compiler for deep learning},
+	title = {TVM: An automated End-to-End optimizing compiler for deep learning},
 	year = {2018},
 	pages = {578--594}
 }
@@ -8572,13 +8576,12 @@ pages={279},
 
 @inproceedings{approxdet:sensys2020,
 	author = {Xu, Ran and Zhang, Chen-lin and Wang, Pengcheng and Lee, Jayoung and Mitra, Subrata and Chaterji, Somali and Li, Yin and Bagchi, Saurabh},
-	booktitle = {Proc. of ACM SenSys},
+	booktitle = {Embedded Networked Sensor Systems},
 	title = {ApproxDet: Content and Contention-Aware Approximate Object Detection for Mobiles},
 	year = {2020},
 	address = {New York, NY, USA},
 	pages = {449–462},
 	publisher = {Association for Computing Machinery},
-	series = {SenSys '20},
 	abstract = {Advanced video analytic systems, including scene classification and object detection, have seen widespread success in various domains such as smart cities and autonomous systems. With an evolution of heterogeneous client devices, there is incentive to move these heavy video analytics workloads from the cloud to mobile devices for low latency and real-time processing and to preserve user privacy. However, most video analytic systems are heavyweight and are trained offline with some pre-defined latency or accuracy requirements. This makes them unable to adapt at runtime in the face of three types of dynamism --- the input video characteristics change, the amount of compute resources available on the node changes due to co-located applications, and the user's latency-accuracy requirements change. In this paper we introduce ApproxDet, an adaptive video object detection framework for mobile devices to meet accuracy-latency requirements in the face of changing content and resource contention scenarios. To achieve this, we introduce a multi-branch object detection kernel, which incorporates a data-driven modeling approach on the performance metrics, and a latency SLA-driven scheduler to pick the best execution branch at runtime. We evaluate ApproxDet on a large benchmark video dataset and compare quantitatively to AdaScale and YOLOv3. We find that ApproxDet is able to adapt to a wide variety of contention and content characteristics and outshines all baselines, e.g., it achieves 52% lower latency and 11.1% higher accuracy over YOLOv3. Our software is open-sourced at https://github.com/purdue-dcsl/ApproxDet.},
 	doi = {10.1145/3384419.3431159},
 	isbn = {9781450375900},
@@ -8650,7 +8653,7 @@ pages={279},
 @inproceedings{tensorflow:osdi2016,
 	author = {Abadi, Mart{\'\i}n and Barham, Paul and Chen, Jianmin and Chen, Zhifeng and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and Ghemawat, Sanjay and Irving, Geoffrey and Isard, Michael and others},
 	booktitle = {Proc. of USENIX OSDI},
-	title = {$\{$TensorFlow$\}$: A System for $\{$Large-Scale$\}$ Machine Learning},
+	title = {TensorFlow: A System for Large-Scale Machine Learning},
 	year = {2016},
 	pages = {265--283}
 }
@@ -9112,7 +9115,7 @@ inference speedup with accuracy on par with the state-of-the-art NNs.},
 
 @article{comparison:tvcg2020,
 	author = {Heinrich, Florian and Schwenderling, Luisa and Joeres, Fabian and Lawonn, Kai and Hansen, Christian},
-	journal = {Proc. of IEEE TVCG},
+	journal = {IEEE Transactions on Visualization and Computer Graphics},
 	title = {Comparison of Augmented Reality Display Techniques to Support Medical Needle Insertion},
 	year = {2020},
 	number = {12},
@@ -9131,7 +9134,7 @@ inference speedup with accuracy on par with the state-of-the-art NNs.},
 
 @inproceedings{indepth:imwut2022,
 	author = {Zhang, Yunfan and Scargill, Tim and Vaishnav, Ashutosh and Premsankar, Gopika and Di Francesco, Mario and Gorlatova, Maria},
-	booktitle = {Proc. ACM IMWUT},
+	booktitle = {IMWUT},
 	title = {InDepth: Real-Time Depth Inpainting for Mobile Augmented Reality},
 	year = {2022}
 }
@@ -9684,7 +9687,7 @@ inference speedup with accuracy on par with the state-of-the-art NNs.},
 @inproceedings{orca:osdi2022,
 	author = {Yu, Gyeong-In and Jeong, Joo Seong and Kim, Geon-Woo and Kim, Soojeong and Chun, Byung-Gon},
 	booktitle = {Proc. of USENIX OSDI},
-	title = {Orca: A distributed serving system for $\{$Transformer-Based$\}$ generative models},
+	title = {Orca: A distributed serving system for Transformer-Based generative models},
 	year = {2022},
 	pages = {521--538}
 }
@@ -9748,7 +9751,7 @@ inference speedup with accuracy on par with the state-of-the-art NNs.},
 @inproceedings{alpa:osdi2022,
 	author = {Zheng, Lianmin and Li, Zhuohan and Zhang, Hao and Zhuang, Yonghao and Chen, Zhifeng and Huang, Yanping and Wang, Yida and Xu, Yuanzhong and Zhuo, Danyang and Xing, Eric P and others},
 	booktitle = {Proc. of USENIX OSDI},
-	title = {Alpa: Automating inter-and $\{$Intra-Operator$\}$ parallelism for distributed deep learning},
+	title = {Alpa: Automating inter-and Intra-Operator parallelism for distributed deep learning},
 	year = {2022},
 	pages = {559--578}
 }
@@ -10764,7 +10767,7 @@ inference speedup with accuracy on par with the state-of-the-art NNs.},
 @inproceedings{building:nsdi2023,
 	author = {Hasan, Shaddi and Padmanabhan, Amar and Davie, Bruce and Rexford, Jennifer and Kozat, Ulas and Gatewood, Hunter and Sanadhya, Shruti and Yurchenko, Nick and Al-Khasib, Tariq and Batalla, Oriol and others},
 	booktitle = {Proc. of USENIX NSDI},
-	title = {Building Flexible,$\{$Low-Cost$\}$ Wireless Access Networks With Magma},
+	title = {Building Flexible,Low-Cost Wireless Access Networks With Magma},
 	year = {2023},
 	pages = {1667--1681}
 }
@@ -21046,7 +21049,7 @@ system.},
   author    = {Zhong, Yinmin and Liu, Shengyu and Chen, Junda and Hu, Jianbo and Zhu, Yibo and Liu, Xuanzhe and Jin, Xin and Zhang, Hao},
   booktitle = {18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)},
   date      = {2024},
-  title     = {$\{$DistServe$\}$: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving},
+  title     = {DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving},
   pages     = {193--210},
 }
 
@@ -21253,7 +21256,7 @@ system.},
   author    = {Wong, Mike and Ramanujam, Murali and Balakrishnan, Guha and Netravali, Ravi},
   booktitle = {21st USENIX Symposium on Networked Systems Design and Implementation (NSDI 24)},
   date      = {2024},
-  title     = {$\{$MadEye$\}$: Boosting Live Video Analytics Accuracy with Adaptive Camera Configurations},
+  title     = {MadEye: Boosting Live Video Analytics Accuracy with Adaptive Camera Configurations},
   pages     = {549--568},
 }
 
@@ -21316,7 +21319,7 @@ system.},
   author    = {Padmanabhan, Arthi and Agarwal, Neil and Iyer, Anand and Ananthanarayanan, Ganesh and Shu, Yuanchao and Karianakis, Nikolaos and Xu, Guoqing Harry and Netravali, Ravi},
   booktitle = {20th USENIX Symposium on Networked Systems Design and Implementation (NSDI 23)},
   date      = {2023},
-  title     = {Gemel: Model Merging for $\{$Memory-Efficient$\}$,$\{$Real-Time$\}$ Video Analytics at the Edge},
+  title     = {Gemel: Model Merging for Memory-Efficient,Real-Time Video Analytics at the Edge},
   pages     = {973--994},
 }
 
@@ -21605,7 +21608,7 @@ system.},
 }
 
 @inproceedings{serverlessllm:osdi2024,
-  title={$\{$ServerlessLLM$\}$: $\{$Low-Latency$\}$ serverless inference for large language models},
+  title={ServerlessLLM: Low-Latency serverless inference for large language models},
   author={Fu, Yao and Xue, Leyang and Huang, Yeqi and Brabete, Andrei-Octavian and Ustiugov, Dmitrii and Patel, Yuvraj and Mai, Luo},
   booktitle={18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)},
   pages={135--153},
@@ -21795,7 +21798,7 @@ system.},
 }
 
 @inproceedings{choi2023envpipe,
-  title={$\{$EnvPipe$\}$: Performance-preserving $\{$DNN$\}$ training framework for saving energy},
+  title={EnvPipe: Performance-preserving DNN training framework for saving energy},
   author={Choi, Sangjin and Koo, Inhoe and Ahn, Jeongseob and Jeon, Myeongjae and Kwon, Youngjin},
   booktitle={2023 USENIX Annual Technical Conference (USENIX ATC 23)},
   pages={851--864},
@@ -21803,7 +21806,7 @@ system.},
 }
 
 @inproceedings{you2023zeus,
-  title={Zeus: Understanding and optimizing $\{$GPU$\}$ energy consumption of $\{$DNN$\}$ training},
+  title={Zeus: Understanding and optimizing GPU energy consumption of DNN training},
   author={You, Jie and Chung, Jae-Won and Chowdhury, Mosharaf},
   booktitle={20th USENIX Symposium on Networked Systems Design and Implementation (NSDI 23)},
   pages={119--139},
@@ -21833,7 +21836,7 @@ system.},
 }
 
 @inproceedings{agrawal2024taming,
-  title={Taming $\{$Throughput-Latency$\}$ tradeoff in $\{$LLM$\}$ inference with $\{$Sarathi-Serve$\}$},
+  title={Taming Throughput-Latency tradeoff in LLM inference with Sarathi-Serve},
   author={Agrawal, Amey and Kedia, Nitin and Panwar, Ashish and Mohan, Jayashree and Kwatra, Nipun and Gulavani, Bhargav and Tumanov, Alexey and Ramjee, Ramachandran},
   booktitle={18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)},
   pages={117--134},
@@ -21895,8 +21898,8 @@ system.},
 }
 
 @misc{meta-tail-utilization,
-	note = {\url{https://engineering.fb.com/2024/07/10/production-engineering/tail-utilization-ads-inference-meta/?utm_source=chatgpt.com}},
-	title = {{Taming the tail utilization of ads inference at Meta scale}},
+	note = {\url{https://engineering.fb.com/2024/07/10/production-engineering/tail-utilization-ads-inference-meta}},
+	title = {Taming the tail utilization of ads inference at Meta scale},
 	date = {2025},
 }
 
@@ -21968,7 +21971,7 @@ system.},
 
 
 @inproceedings{qiu2024power,
-  title={Power-aware Deep Learning Model Serving with $\{$$\mu$-Serve$\}$},
+  title={Power-aware Deep Learning Model Serving with $\mu$-Serve},
   author={Qiu, Haoran and Mao, Weichao and Patke, Archit and Cui, Shengkun and Jha, Saurabh and Wang, Chen and Franke, Hubertus and Kalbarczyk, Zbigniew and Ba{\c{s}}ar, Tamer and Iyer, Ravishankar K},
   booktitle={2024 USENIX Annual Technical Conference (USENIX ATC 24)},
   pages={75--93},

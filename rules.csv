@@ -46,6 +46,7 @@ booktitle_regex,booktitle_formatted
 "MMSys","ACM MMSys"
 "MICRO","IEEE MICRO"
 "ASPLOS","ACM ASPLOS"
+"Architectural Support for Programming Languages and Operating Systems","ACM ASPLOS"
 "hotnets","ACM HotNets"
 "BMSB","IEEE BMSB"
 "International Workshop on Edge Systems, Analytics and Networking","ACM EdgeSys"

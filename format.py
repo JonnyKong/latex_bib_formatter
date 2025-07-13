@@ -27,6 +27,9 @@ class FormatterBlockMiddleware(BlockMiddleware):
                 entry["journal"] = self.transform_booktitle(entry["journal"])
             entry.key = self.synthesize_key(entry)
 
+        if "abstract" in entry:
+            del entry["abstract"]
+
         return entry
 
     def transform_booktitle(self, n):

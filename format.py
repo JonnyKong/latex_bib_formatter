@@ -59,6 +59,10 @@ class FormatterBlockMiddleware(BlockMiddleware):
         year_part = entry["year"] if "year" in entry else ""
 
         key = f"{title_part}:{booktitle_part}{year_part}"
+
+        # e.g. turn S\&P to SP
+        key = key.replace("\\&", "")
+
         return key
 
     def is_arxiv(self, entry):

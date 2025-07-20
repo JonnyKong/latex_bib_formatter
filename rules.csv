@@ -32,6 +32,7 @@ booktitle_regex,booktitle_formatted
 "International Conference on Mobile Computing and Networking","ACM MobiCom"
 "MobiCom","ACM MobiCom"
 "Mobile Systems, Applications, and Services","ACM MobiSys"
+"Mobile Systems, Applications and Services","ACM MobiSys"
 "MobiSys","ACM MobiSys"
 "Transactions on Networking","IEEE/ACM ToN"
 "(TON)","IEEE/ACM ToN"

@@ -41,5 +41,5 @@ Formats the given latex bib file by:
     For example:
 
     ```bash
-    python format.py dsnl.bib dsnl_processed.bib
+    python format.py dsnl_raw.bib dsnl.bib
     ```
